@@ -4,38 +4,38 @@ namespace BankSim.Accounts
 {
     class CreditAccount : Account
     {
-        public CreditAccount(string owner) : base(owner)
+        public int Doba { get; set; }
+        public CreditAccount(string owner, decimal money, int doba) : base(owner)
         {
-            Interest = 12;
-            Balance = 50000.0M;
+            Doba = doba;
+            Balance = -money;
+            LastInterest = Created;
+            Interest = (double)Balance * (Doba / 100) * 0.2;
             Type = "Kreditní";
         }
 
         public override void Deposit(decimal ammount)
         {
             Balance += ammount;
-            records.Add("Vklad - " + ammount + "Kč");
+            records.Add("Vklad | " + ammount + "Kč");
         }
 
         public override void Withdraw(decimal ammount)
         {
-            if (Balance < ammount)
-            {
-                Console.WriteLine("Nedostak prostředků");
-            }
-            else
-            {
-                Balance -= ammount;
-                records.Add("Výběr - " + ammount + "Kč");
-            }
+            Balance -= ammount;
+            records.Add("Výběr | " + ammount + "Kč");
         }
 
         public override void TakeInterest()
         {
-            if (Balance >= 50000.0M) { }
+            if (Balance >= 0) 
+            {
+            
+            }
             else
             {
-                Balance = Balance - (Balance * (decimal)(Interest / 100));
+                Interest = (double)Balance * (Doba - (pg.GetBankTime().Subtract(Created).TotalDays / 30) / 100) * 0.2;
+                Balance += (decimal)(Interest / 100);
             }
 
         }

@@ -21,11 +21,13 @@ namespace BankSim
 
             accounts.Add(new SavingsAccount("Filip"));
             accounts[0].Deposit(30000);
-            accounts.Add(new CreditAccount("Tomáš"));
+            accounts.Add(new CreditAccount("Tomáš", 50000.0M, 12));
             accounts.Add(new StudentSavingsAccount("Ondřej"));
             accounts[2].Deposit(15000);
 
             btime.SetTime();
+
+            WriteAccounts();
 
             while (exit != true)
             {
@@ -121,7 +123,11 @@ namespace BankSim
                     accounts.Add(studSaveAccs);
                     break;
                 case "kred":
-                    credAccs = new CreditAccount(owner);
+                    Console.WriteLine("Kolik peněz: ");
+                    decimal money = Convert.ToDecimal(Console.ReadLine());
+                    Console.WriteLine("Na jak dlouho: ");
+                    int doba = Convert.ToInt32(Console.ReadLine());
+                    credAccs = new CreditAccount(owner, money, doba);
                     accounts.Add(credAccs);
                     break;
                 default:

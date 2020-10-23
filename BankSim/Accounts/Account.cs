@@ -5,7 +5,7 @@ namespace BankSim.Accounts
 {
     abstract class Account
     {
-        private Program pg = new Program();
+        protected Program pg = new Program();
 
         public string Owner { get; set; }
         public decimal Balance { get; set; }

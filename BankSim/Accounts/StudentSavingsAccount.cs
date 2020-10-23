@@ -22,7 +22,7 @@ namespace BankSim.Accounts
             else
             {
                 Balance -= ammount;
-                records.Add("Výběr - " + ammount + "Kč");
+                records.Add("Výběr | " + ammount + "Kč");
             }
         }
     }

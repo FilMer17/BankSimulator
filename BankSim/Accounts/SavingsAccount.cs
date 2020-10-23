@@ -14,7 +14,7 @@ namespace BankSim.Accounts
         public override void Deposit(decimal ammount)
         {
             Balance += ammount;
-            records.Add("Vklad - " + ammount + "Kč");
+            records.Add("Vklad | " + ammount + "Kč");
         }
 
         public override void Withdraw(decimal ammount)
@@ -26,7 +26,7 @@ namespace BankSim.Accounts
             else
             {
                 Balance -= ammount;
-                records.Add("Výběr - " + ammount + "Kč");
+                records.Add("Výběr | " + ammount + "Kč");
             }
         }
 
