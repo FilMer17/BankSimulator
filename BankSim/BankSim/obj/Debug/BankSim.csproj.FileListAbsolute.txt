@@ -1,7 +1,0 @@
-C:\GameDev\CS\BankSim\BankSim\bin\Debug\BankSim.exe.config
-C:\GameDev\CS\BankSim\BankSim\bin\Debug\BankSim.exe
-C:\GameDev\CS\BankSim\BankSim\bin\Debug\BankSim.pdb
-C:\GameDev\CS\BankSim\BankSim\obj\Debug\BankSim.csprojAssemblyReference.cache
-C:\GameDev\CS\BankSim\BankSim\obj\Debug\BankSim.csproj.CoreCompileInputs.cache
-C:\GameDev\CS\BankSim\BankSim\obj\Debug\BankSim.exe
-C:\GameDev\CS\BankSim\BankSim\obj\Debug\BankSim.pdb
